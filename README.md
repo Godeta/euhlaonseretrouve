@@ -1,6 +1,7 @@
-# projet
-Un site web static hébergé sur github pour montrer mon projet de documenter mon voyage (à vélo à la rencontre de différentes associations) avec des articles pour chaque étapes.
+# euhlaonseretrouve
 
-## etape 1
-En m'inspirant de la page petites-histoires.html faire une page sur laquelle j'ai différentes cartes et chacune contient un article avec du texte, des photos...
-Par contre j'aimerai que ce soit responsif donc adapté à toutes tailles d'écran.
+Un blog personnel minimaliste pour documenter mon projet. Ce qui me motive, c’est de découvrir différents exemples d’initiatives qui rassemblent des personnes, que ce soit des associations, tiers-lieux, évènements temporaires… Voir toutes ces façons de se rassembler, ce qui fonctionne ou pas et témoigner de leur existence.
+
+## 👤 Auteur
+
+**Arnaud GODET** - Voir l'instagram du projet en cliquant sur l'icone en haut à droite du site.
