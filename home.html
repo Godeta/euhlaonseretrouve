@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>euhlaonseretrouve - Le Blog de Voyage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #faf8f6;
+            color: #2a2a2a;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #d32f2f;
+            color: #faf8f6;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: relative; /* Add this for absolute positioning of the logo */
+        }
+
+        .logo {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    height: 50px; /* Adjust as needed */
+    width: auto;
+    border-radius: 50%; /* Makes the logo round */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 768px) { /* This is the minimum width for a computer screen */
+    .logo {
+        height: 120px; /* Logo size for computer */
+    }
+}
+
+        .social-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            height: 40px; /* Adjust as needed */
+            width: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            color: #ffd54f;
+        }
+
+        header p {
+            font-size: 1rem;
+            margin-top: 0.5rem;
+            opacity: 0.9;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        #articles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.2);
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-card-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card h2 {
+            color: #ffd54f;
+            background-color: #d32f2f;
+            padding: 0.5rem 1rem;
+            margin: -1.5rem -1.5rem 1rem -1.5rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        .article-card .date {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .article-card p {
+            color: #555;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            background-color: #d32f2f;
+            color: #faf8f6;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        .read-more:hover {
+            background-color: #b71c1c;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            overflow-y: auto;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background-color: #faf8f6;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            animation: slideIn 0.3s ease;
+            margin: auto;
+        }
+
+        @keyframes slideIn {
+            from { 
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            background-color: #d32f2f;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .modal-header h2 {
+            color: #ffd54f;
+            font-size: 2rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-header .date {
+            color: #faf8f6;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-body p {
+            margin-bottom: 1.5rem;
+            color: #2a2a2a;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .back-button {
+            background-color: #d32f2f;
+            color: #faf8f6;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 2rem 2rem 2rem 2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #b71c1c;
+        }
+
+        footer {
+            background-color: #d32f2f;
+            color: #faf8f6;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            #articles-container {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .modal-content {
+                margin: 1rem;
+            }
+
+            .modal-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .modal-image {
+                height: 250px;
+            }
+
+            .modal-body {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            #articles-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            #articles-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/images/logo.png" alt="Logo" class="logo">
+        <a href="https://www.instagram.com/euhlaonsretrouve/" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
+        </a>
+        <h1>euhlaonseretrouve</h1>
+        <p>Chroniques d'un voyage à vélo</p>
+    </header>
+
+    <main>
+        <div id="articles-container"></div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <div class="date" id="modal-date"></div>
+            </div>
+            <img id="modal-image" class="modal-image" src="" alt="">
+            <div class="modal-body" id="modal-body"></div>
+            <button class="back-button" id="back-button">← Retour</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Arnaud GODET - Tous droits réservés</p>
+    </footer>
+
+    <script>
+        const articles = [
+            {
+                id: 1,
+                title: "Premier Départ : L'Aventure Commence",
+                date: "2 Janvier 2026",
+                image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=800",
+                description: "Il fait froid et j'ai pas fini de planifier mon itinéraire.",
+                content: `<p>C'est par une soirée fraîche de décembre que l'aventure a vraiment commencé. Le vélo chargé mais pas plus que moi avec mes multiples couches de vêtements, je suis allé camper pas loin de Bénouville. <br/>Je suis content d'être de nouveau dans l'action concrète car passer des journées à faire des mails, organiser, planifier... ça me donne le goût amer de faire du sur place. Il y a une infinité de possibilité de voyage et d'organisations à rencontrer donc créer l'itinéraire au fur et à mesure du voyage me semble être la meilleure solution pour avancer.</p>`
+            },
+            {
+                id: 2,
+                title: "Rencontre loupée",
+                date: "3 Janvier 2026",
+                image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800",
+                description: "Je me suis callé les miches sans avoir ce que je voulais mais piste d'interview à venir.",
+                content: `<p>Je pensais faire une séance de Qi Gon à oustreham au café la bonne arrivée, sauf que y'a rien eu. Dommage le lieu à l'air chouette donc ça sera peut être pour une autre fois. Après m'être réfugié au Mcdo pour me réchauffer de cette matinée dans le froid (du réveil à 5h jusqu'à 11h mon arrivée au fast-food, mes pieds étaient gelés !) <br/> Un peu d'organisation, je fais le logo du projet et je créer le compte insta. Y'a plein de boulot : écrire le script de la 1ère vidéo, faire le montage, planifier qui je vois, quand, contacter des assos... <br/> Je fais ma 1ère maraude fixe avec la croix rouge, ça se passe très bien et je pourrai potentiellement interviewer quelqu'un qui en fait partie depuis longtemps. Je récupère le contact et je fais un joli petit mail.</p>`
+            },
+            {
+                id: 3,
+                title: "Les Défis de la Route",
+                date: "28 Décembre 2025",
+                image: "https://images.unsplash.com/photo-1551994053-d5c0e4d73b11?w=800",
+                description: "Face aux intempéries et aux obstacles, chaque difficulté devient une leçon de résilience et de détermination.",
+                content: `<p>Tous les jours ne sont pas ensoleillés. Aujourd'hui, la pluie battante et le vent violent m'ont rappelé que la nature reste maîtresse. Trempé jusqu'aux os, j'ai dû trouver refuge dans une grange abandonnée.</p>
+                
+                <p>Ces moments de difficulté sont paradoxalement ceux où l'on se découvre le plus. J'ai appris à accepter l'inconfort, à trouver de la beauté même dans l'adversité. La pluie qui ruisselle, le bruit du vent, le silence de la solitude... tout cela fait partie intégrante de l'expérience.</p>
+                
+                <p>Un fermier m'a finalement recueilli pour la nuit. Autour d'un feu de cheminée, nous avons partagé des histoires. Il m'a dit : "La route t'apprend ce que tu ne peux pas apprendre entre quatre murs." Il avait raison.</p>`
+            }
+        ];
+
+        const articlesContainer = document.getElementById('articles-container');
+        const modal = document.getElementById('modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDate = document.getElementById('modal-date');
+        const modalImage = document.getElementById('modal-image');
+        const modalBody = document.getElementById('modal-body');
+        const backButton = document.getElementById('back-button');
+
+        function renderArticles() {
+            try {
+                const sortedArticles = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                articlesContainer.innerHTML = sortedArticles.map(article => `
+                    <div class="article-card" data-id="${article.id}">
+                        <img src="${article.image}" alt="${article.title}">
+                        <div class="article-card-content">
+                            <h2>${article.title}</h2>
+                            <div class="date">${article.date}</div>
+                            <p>${article.description}</p>
+                            <button class="read-more">Lire plus →</button>
+                        </div>
+                    </div>
+                `).join('');
+
+                document.querySelectorAll('.article-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const articleId = parseInt(card.dataset.id);
+                        openModal(articleId);
+                    });
+                });
+            } catch (error) {
+                console.error('Error rendering articles:', error);
+                articlesContainer.innerHTML = '<p>Une erreur est survenue lors du chargement des articles.</p>';
+            }
+        }
+
+        function openModal(articleId) {
+            try {
+                const article = articles.find(a => a.id === articleId);
+                if (!article) return;
+
+                modalTitle.textContent = article.title;
+                modalDate.textContent = article.date;
+                modalImage.src = article.image;
+                modalImage.alt = article.title;
+                modalBody.innerHTML = article.content;
+
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            } catch (error) {
+                console.error('Error opening modal:', error);
+            }
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        backButton.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        renderArticles();
+    </script>
+</body>
+</html>
