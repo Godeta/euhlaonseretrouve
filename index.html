@@ -75,6 +75,21 @@
             padding: 2rem 1rem;
         }
 
+        .category-filter {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .category-filter select {
+            padding: 0.75rem 1rem;
+            border: 2px solid #d32f2f;
+            border-radius: 4px;
+            background-color: white;
+            color: #2a2a2a;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
         #articles-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -304,10 +319,15 @@
             <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-icon">
         </a>
         <h1>euhlaonseretrouve</h1>
-        <p>Chroniques d'un voyage à vélo</p>
+        <p>Chroniques d'un voyage à la recherche de lien social</p>
     </header>
 
     <main>
+        <div class="category-filter">
+            <select id="category-select">
+                <option value="all">Toutes les catégories</option>
+            </select>
+        </div>
         <div id="articles-container"></div>
     </main>
 
@@ -335,6 +355,7 @@
                 date: "2 Janvier 2026",
                 image: "assets/images/debut.jpg",
                 description: "Il fait froid et j'ai pas fini de planifier mon itinéraire.",
+                categories: ["voyage"],
                 content: `<p>C'est par une soirée fraîche de décembre que l'aventure a vraiment commencé. Le vélo chargé mais pas plus que moi avec mes multiples couches de vêtements, je suis allé camper pas loin de Bénouville. <br/>Je suis content d'être de nouveau dans l'action concrète car passer des journées à faire des mails, organiser, planifier... ça me donne le goût amer de faire du sur place. Il y a une infinité de possibilité de voyage et d'organisations à rencontrer donc créer l'itinéraire au fur et à mesure du voyage me semble être la meilleure solution pour avancer.</p>`
             },
             {
@@ -343,6 +364,7 @@
                 date: "3 Janvier 2026",
                 image: "assets/images/louper.jpg",
                 description: "Je me suis callé les miches sans avoir ce que je voulais mais piste d'interview à venir.",
+                categories: ["association", "voyage"],
                 content: `<p>Je pensais faire une séance de Qi Gon à oustreham au café la bonne arrivée, sauf que y'a rien eu. Dommage le lieu à l'air chouette donc ça sera peut être pour une autre fois. Après m'être réfugié au Mcdo pour me réchauffer de cette matinée dans le froid (du réveil à 5h jusqu'à 11h mon arrivée au fast-food, mes pieds étaient gelés !) <br/> Un peu d'organisation, je fais le logo du projet et je créer le compte insta. Y'a plein de boulot : écrire le script de la 1ère vidéo, faire le montage, planifier qui je vois, quand, contacter des assos... <br/> Je fais ma 1ère maraude fixe avec la croix rouge, ça se passe très bien et je pourrai potentiellement interviewer quelqu'un qui en fait partie depuis longtemps. Je récupère le contact et je fais un joli petit mail.</p>`
             },
             {
@@ -351,7 +373,8 @@
                 date: "7 Janvier 2026",
                 image: "assets/images/story.jpg",
                 description: "Enfin le compte est public ! Quelques détails sur ce début de communication. ",
-                content: `<p> Cela fait un petit moment que ce projet me trotte dans la tête. Initialement je pensais me lancer un projet de parcours de la Normandie en vélo et partager les jolis coins. Puis j'ai eu envie de me donner une mission plus en rapport avec mes questionnements ou passions du moment. En essayant de retracer l'histoire de mon village (projet sur lequel je communiquerai en Février), j'ai eu une discussion avec un des anciens du quartier qui m'a marquée. <br/> <br/> A son époque la vie était plus rude, les loisirs et les moyens de transports plus limités. Ils étaient seulement 160 et avaient moins de moyens. <i>On avait pas la télé, c’est dehors qu’on allait chercher pendant quelques heures l’évasion. </i> (<a href="https://youtu.be/x8l43czQAy4">très belle chanson </a>) <br/> Pourtant il y avait 3 bars dans le village, un charcutier et un boulanger ambulant passaient chaque semaine. Chaque année il y avait de nombreuses fêtes comme des carnavals, des sorties à vélo, des bals. Il connaissait tout le monde et se souvient encore de chaque famille... Ce n'est plus le cas aujourd'hui, il y a beaucoup moins de lien social.  <br/> Pour citer Francis Cabrel "Voisins" : <i> Ils vivaient dans deux mondes lointains <br/> Ils étaient des voisins <br/> Chacun d'eux sagement replié <br/> Sur son bout de palier <br/> Ils rêvaient à peu près chaque nuit <br/> Qu'ils auraient des amis </i> <br/> <br/> Aujourd’hui beaucoup vont au travail puis reviennent chez eux ou prennent la voiture pour aller faire des activités ailleurs. Cela fait un moment que je m'intéresse aux tiers-lieu ce concept vaste qui a l'origine désigne un lieu hors du travail ou de chez-soi qui offre un environnement social où l'on se mélange. Cela m'a donné envie de découvrir et partager un ensemble d'initiatives différentes qui nous permettent de se rencontrer, de dynamiser nos communautés, de vivre ensemble. </p>`
+                categories: ["projet"],
+                content: `<p> Cela fait un petit moment que ce projet me trotte dans la tête. Initialement je pensais me lancer un projet de parcours de la Normandie en vélo et partager les jolis coins. Puis j'ai eu envie de me donner une mission plus en rapport avec mes questionnements ou passions du moment. En essayant de retracer l'histoire de mon village (projet sur lequel je communiquerai en Février), j'ai eu une discussion avec un des anciens du quartier qui m'a marquée. <br/> <br/> A son époque la vie était plus rude, les loisirs et les moyens de transports plus limités. Ils étaient seulement 160 et avaient moins de moyens. <i>On avait pas la télé, c’est dehors qu’on allait chercher pendant quelques heures l’évasion. </i> (<a href="https://youtu.be/x8l43czQAy4">très belle chanson </a>) <br/> Pourtant il y avait 3 bars dans le village, un charcutier et un boulanger ambulant passaient chaque semaine. Chaque année il y avait de nombreuses fêtes comme des carnavals, des sorties à vélo, des bals. Il connaissait tout le monde et se souvient encore de chaque famille... Ce n'est plus le cas aujourd'hui, il y a beaucoup moins de lien social.  <br/> Pour citer Francis Cabrel "Voisins" : <i> Ils vivaient dans deux mondes lointains <br/> Ils étaient des voisins <br/> Chacun d'eux sagement replié <br/> Sur son bout de palier <br/> Ils rêvaient à peu près chaque nuit <br/> Qu'ils auraient des amis </i> <br/> <br/> Aujourd’hui beaucoup vont au travail puis reviennent chez eux ou prennent la voiture pour aller faire des activités ailleurs. Cela fait un moment que je m'intéresse aux tiers-lieu ce concept vaste qui a l'origine désigne un lieu hors du travail ou de chez-soi qui offre un environnement social où l'on se mélange. Cela m'a donné envie de découvrir et partager un ensemble d'initiatives différentes qui nous permettent de se rencontrer, de dynamiser nos communautés, de vivre ensemble. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/hwXgoyTE-xE" title="Présentation du projet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>`
             },
             {
                 id: 4,
@@ -359,7 +382,8 @@
                 date: "9 Janvier 2026",
                 image: "assets/images/scout.jpg",
                 description: "Un témoignage d'une scout sur son parcours. ",
-                content: `<p> Les scouts sont l'une des organisations les plus connues qui créer du lien entre les enfants, les jeunes ou moins jeunes et inculque des valeurs communes à ses membres. <br/> <br/> Nathalie est rentrée chez les scouts vers 8 ans puis une fois adulte elle y a participé comme cheftaine c'est à dire qu'elle encadrait des enfants scouts et aujourd'hui elle est trésorière. Chez les scouts elle a pu camper, faire des jeux, rencontrer des amis et même son mari. <br/> <br/> Bien qu'associé à la religion chrétienne le mouvement scouts est avant tout un mouvement d'éducation populaire ouvert à toutes et à tous. D'ailleurs il existe d'autres mouvements comme les éclaireurs qui sont l'équivalent laïc ou bien les scouts musulmans de France. <br/> Le coeur du projet est d'aider les individus à construire leur personnalité (le cadre scout repose sur le principe que chaque individu est unique et vise à l'autonomie et la responsabilité), à vivre ensemble (apprendre de façon concrète à être en groupe et décider de façon démocratique) et habiter autrement la planète (la nature est le lieu d'excellence de la pratique du scoutisme !). <br/> <br/> Pour plus d'informations n'hésitez pas à consulter leur <a href="https://sgdf.fr/nous-connaitre/notre-projet-educatif/"> site internet </a> ou contacter un groupe proche de chez vous ! </p>`
+                categories: ["association"],
+                content: `<p> Les scouts sont l'une des organisations les plus connues qui créer du lien entre les enfants, les jeunes ou moins jeunes et inculque des valeurs communes à ses membres. <br/> <br/> Nathalie est rentrée chez les scouts vers 8 ans puis une fois adulte elle y a participé comme cheftaine c'est à dire qu'elle encadrait des enfants scouts et aujourd'hui elle est trésorière. Chez les scouts elle a pu camper, faire des jeux, rencontrer des amis et même son mari. <br/> <br/> Bien qu'associé à la religion chrétienne le mouvement scouts est avant tout un mouvement d'éducation populaire ouvert à toutes et à tous. D'ailleurs il existe d'autres mouvements comme les éclaireurs qui sont l'équivalent laïc ou bien les scouts musulmans de France. <br/> Le coeur du projet est d'aider les individus à construire leur personnalité (le cadre scout repose sur le principe que chaque individu est unique et vise à l'autonomie et la responsabilité), à vivre ensemble (apprendre de façon concrète à être en groupe et décider de façon démocratique) et habiter autrement la planète (la nature est le lieu d'excellence de la pratique du scoutisme !). <br/> <br/> Pour plus d'informations n'hésitez pas à consulter leur <a href="https://sgdf.fr/nous-connaitre/notre-projet-educatif/"> site internet </a> ou contacter un groupe proche de chez vous ! <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/kFkSpOiyL58" title="Interview scout" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 5,
@@ -367,7 +391,8 @@
                 date: "11 Janvier 2026",
                 image: "assets/images/marche_decouverte.jpg",
                 description: "Après une chouette randonnée de 10km, petite interview du vice-président de l'association. ",
-                content: `<p> Vous aimez la rando ? Découvrir de nouveaux endroits ou prendre le temps de rencontrer d'autres personnes ? L'association Marche et Découverte propose tout cela ! Avec des marches rapides pour les sportifs, des randonnée douces pour prendre le temps, des sorties à thèmes pour apprendre de nouvelles choses ou bien des marches nordiques vous avez de quoi trouver votre bonheur. <br/> <br/> Le jour de l'interview nous avions justement fait une petite randonnée de 10km à la découverte des cimetières de Caen. J'ai pu discuter avec plusieurs personnes très chouettes et intéressantes tout en apprenant plus sur les célébrités des cimetières par chez moi. Je suis convaincu que c'est un excellent moyen de créer du lien et forger de belles relations tout en s'entretenant et même si c'est souvent populaire chez les retraités, les jeunes sont accueillis à bras ouvert ! <br/> <br/> Le site du club <a href="https://www.med-ouistreham.fr/en-savoir-plus/le-club-8892" > juste ici </a>. </p>`
+                categories: ["association", "sport"],
+                content: `<p> Vous aimez la rando ? Découvrir de nouveaux endroits ou prendre le temps de rencontrer d'autres personnes ? L'association Marche et Découverte propose tout cela ! Avec des marches rapides pour les sportifs, des randonnée douces pour prendre le temps, des sorties à thèmes pour apprendre de nouvelles choses ou bien des marches nordiques vous avez de quoi trouver votre bonheur. <br/> <br/> Le jour de l'interview nous avions justement fait une petite randonnée de 10km à la découverte des cimetières de Caen. J'ai pu discuter avec plusieurs personnes très chouettes et intéressantes tout en apprenant plus sur les célébrités des cimetières par chez moi. Je suis convaincu que c'est un excellent moyen de créer du lien et forger de belles relations tout en s'entretenant et même si c'est souvent populaire chez les retraités, les jeunes sont accueillis à bras ouvert ! <br/> <br/> Le site du club <a href="https://www.med-ouistreham.fr/en-savoir-plus/le-club-8892" > juste ici </a>. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/S_zswliVnwk" title="Interview marche et découverte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 6,
@@ -375,11 +400,44 @@
                 date: "12 Janvier 2026",
                 image: "assets/images/regards.jpg",
                 description: "3 témoignages regroupés sur ce sujet et quelques chiffres sur le milieu associatif. ",
-                content: `<p> J'ai pu interroger 3 personnes très investies dans le milieu associatif : <br/> Doriane DUBOIS association Amavada <a href"https://www.amavada.com/association" > voir le site web </a>. <br/> (en construction...) <br/> Chiffres intéressants de France bénévole : la France est un pays avec un milieu associatif fort, 21% de la population fait parti d'une association ! Sur ces dernières années on constate une tendeance à la baisse chez les personnes agées et à la hausse chez les jeunes. L'une des interprétations est le fait qu'on devient parent plus tard ainsi les retraités sont plus occupés en devenant toujours juste grands-parents et les jeunes sont plus longtemps disponible avant d'avoir des enfants. </p>`
+                categories: ["association"],
+                content: `<p> J'ai pu interroger 3 personnes très investies dans le milieu associatif : <br/> Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> (en construction...) <br/> Chiffres intéressants de France bénévole : la France est un pays avec un milieu associatif fort, 21% de la population fait parti d'une association ! Sur ces dernières années on constate une tendeance à la baisse chez les personnes agées et à la hausse chez les jeunes. L'une des interprétations est le fait qu'on devient parent plus tard ainsi les retraités sont plus occupés en devenant toujours juste grands-parents et les jeunes sont plus longtemps disponible avant d'avoir des enfants. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/3QWpD9yo11A" title="Regards croisés : rejoindre une asso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
+            {
+                id: 7,
+                title: "Interview Amavada",
+                date: "13 Janvier 2026",
+                image: "assets/images/amavada.png",
+                description: "3 témoignages regroupés sur ce sujet et quelques chiffres sur le milieu associatif. ",
+                categories: ["association"],
+                content: `<p>Merci à Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/RgFWvqktawY" title="Interview Amavada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ></p>`
+            },
+            {
+                id: 8,
+                title: "Double témoignage sur les débuts de lieux de rencontre",
+                date: "15 Janvier 2026",
+                image: "assets/images/regards.jpg",
+                description: "3 témoignages regroupés sur ce sujet et quelques chiffres sur le milieu associatif. ",
+                categories: ["association", "tiers-lieu"],
+                content: `<p> Merci à Michel et Jean-Claude pour ces témoignages ! Les sites : <a href="https://caen.fr/annuaire-association/agir-ensemble-pour-la-pierre-heuze"> café associatif de la pierre-heuzé </a> et <a href="https://coop5pour100.com"> ressourcerie de la coop 5 pour 100 </a> <br/> <br/> Disponible directement sur la chaîne yt : <iframe width="344" height="611" src="https://www.youtube.com/embed/B6m8gLkijOM" title="Début de projets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
+            },
+            {
+                id: 9,
+                title: "Des histoires qui font du bien !",
+                date: "16 Janvier 2026",
+                image: "assets/images/belle_histoire.jpg",
+                description: "Ici je regroupe un format d'extraits de mes interviews qui se concentre sur les belles histoires de rencontre ou de lien. ",
+                categories: ["association", "tiers-lieu"],
+                content: `<p style="text-align: center;"> Il y a beaucoup de belles histoires et j'ai voulu faire un format dédié à cela. Les associations sont déjà présentées dans d'autres vidéos ou articles ici on profites juste des anecdotes : <br/> <br/> 
+                    <iframe width="611" height="611" src="https://www.youtube.com/embed/eUfHsDn5EKU" title="Cafe Pierre-Heuze, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/cGFI_ipnDVs" title="Coop 5 pour 100, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/XPjgScaSSLg" title="LVN, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
+            },
+
         ];
 
         const articlesContainer = document.getElementById('articles-container');
+        const categorySelect = document.getElementById('category-select');
         const modal = document.getElementById('modal');
         const modalTitle = document.getElementById('modal-title');
         const modalDate = document.getElementById('modal-date');
@@ -387,9 +445,32 @@
         const modalBody = document.getElementById('modal-body');
         const backButton = document.getElementById('back-button');
 
+        let currentFilter = 'all';
+
+        function initializeCategories() {
+            const allCategories = new Set();
+            articles.forEach(article => {
+                article.categories.forEach(category => allCategories.add(category));
+            });
+            
+            Array.from(allCategories).sort().forEach(category => {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+                categorySelect.appendChild(option);
+            });
+        }
+
+        function filterArticles(category) {
+            return category === 'all' 
+                ? articles 
+                : articles.filter(article => article.categories.includes(category));
+        }
+
         function renderArticles() {
             try {
-                const sortedArticles = articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                const filteredArticles = filterArticles(currentFilter);
+                const sortedArticles = filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
                 
                 articlesContainer.innerHTML = sortedArticles.map(article => `
                     <div class="article-card" data-id="${article.id}">
@@ -452,6 +533,12 @@
             }
         });
 
+        categorySelect.addEventListener('change', (e) => {
+            currentFilter = e.target.value;
+            renderArticles();
+        });
+
+        initializeCategories();
         renderArticles();
     </script>
 </body>
