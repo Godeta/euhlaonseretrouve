@@ -310,6 +310,39 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        .modern-button {
+    background-color: rgb(232, 24, 17);
+    color: #ffd54f;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 0 auto; /* Center the button horizontally */
+    margin-bottom: 10px;
+    display: block; /* Make the button a block-level element */
+}
+.video-container {
+    width: 611px;
+    height: 611px;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        width: 311px;
+        height: 311px;
+    }
+}
     </style>
 </head>
 <body>
@@ -324,6 +357,8 @@
 
     <main>
         <h2> Retrouvez la carte des initiatives et des articles plus détaillés juste ici : <a target="_blank" href="https://grand-format.net/la-carte-des-initiatives-associatives-en-normandie/"> La carte</a> <br/> </h2> <br/>
+        <!-- bouton "c'est quoi ce blog ?" quand on clique dessus cela ouvre l'article "1ère publication : lancement officiel du projet"  -->
+        <button id="blog-info-button" class="modern-button">c'est quoi ce blog ?</button>
         <div class="category-filter">
             <select id="category-select">
                 <option value="all">Toutes les catégories</option>
@@ -375,7 +410,7 @@
                 image: "assets/images/story.jpg",
                 description: "Enfin le compte est public ! Quelques détails sur ce début de communication. ",
                 categories: ["blog"],
-                content: `<p> Cela fait un petit moment que ce projet me trotte dans la tête. Initialement je pensais me lancer un projet de parcours de la Normandie en vélo et partager les jolis coins. Puis j'ai eu envie de me donner une mission plus en rapport avec mes questionnements ou passions du moment. En essayant de retracer l'histoire de mon village (projet sur lequel je communiquerai en Février), j'ai eu une discussion avec un des anciens du quartier qui m'a marquée. <br/> <br/> A son époque la vie était plus rude, les loisirs et les moyens de transports plus limités. Ils étaient seulement 160 et avaient moins de moyens. <i>On avait pas la télé, c’est dehors qu’on allait chercher pendant quelques heures l’évasion. </i> (<a href="https://youtu.be/x8l43czQAy4">très belle chanson </a>) <br/> Pourtant il y avait 3 bars dans le village, un charcutier et un boulanger ambulant passaient chaque semaine. Chaque année il y avait de nombreuses fêtes comme des carnavals, des sorties à vélo, des bals. Il connaissait tout le monde et se souvient encore de chaque famille... Ce n'est plus le cas aujourd'hui, il y a beaucoup moins de lien social.  <br/> Pour citer Francis Cabrel "Voisins" : <i> Ils vivaient dans deux mondes lointains <br/> Ils étaient des voisins <br/> Chacun d'eux sagement replié <br/> Sur son bout de palier <br/> Ils rêvaient à peu près chaque nuit <br/> Qu'ils auraient des amis </i> <br/> <br/> Aujourd’hui beaucoup vont au travail puis reviennent chez eux ou prennent la voiture pour aller faire des activités ailleurs. Cela fait un moment que je m'intéresse aux tiers-lieu ce concept vaste qui a l'origine désigne un lieu hors du travail ou de chez-soi qui offre un environnement social où l'on se mélange. Cela m'a donné envie de découvrir et partager un ensemble d'initiatives différentes qui nous permettent de se rencontrer, de dynamiser nos communautés, de vivre ensemble. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/hwXgoyTE-xE" title="Présentation du projet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>`
+                content: `<p> <iframe class="video-container" src="https://www.youtube.com/embed/hwXgoyTE-xE" title="Présentation du projet" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> <br/> <br/> Cela fait un petit moment que ce projet me trotte dans la tête. Initialement je pensais me lancer un projet de parcours de la Normandie en vélo et partager les jolis coins. Puis j'ai eu envie de me donner une mission plus en rapport avec mes questionnements ou passions du moment. En essayant de retracer l'histoire de mon village (projet sur lequel je communiquerai en Février), j'ai eu une discussion avec un des anciens du quartier qui m'a marquée. <br/> <br/> A son époque la vie était plus rude, les loisirs et les moyens de transports plus limités. Ils étaient seulement 160 et avaient moins de moyens. <i>On avait pas la télé, c’est dehors qu’on allait chercher pendant quelques heures l’évasion. </i> (<a href="https://youtu.be/x8l43czQAy4">très belle chanson </a>) <br/> Pourtant il y avait 3 bars dans le village, un charcutier et un boulanger ambulant passaient chaque semaine. Chaque année il y avait de nombreuses fêtes comme des carnavals, des sorties à vélo, des bals. Il connaissait tout le monde et se souvient encore de chaque famille... Ce n'est plus le cas aujourd'hui, il y a beaucoup moins de lien social.  <br/> Pour citer Francis Cabrel "Voisins" : <i> Ils vivaient dans deux mondes lointains <br/> Ils étaient des voisins <br/> Chacun d'eux sagement replié <br/> Sur son bout de palier <br/> Ils rêvaient à peu près chaque nuit <br/> Qu'ils auraient des amis </i> <br/> <br/> Aujourd’hui beaucoup vont au travail puis reviennent chez eux ou prennent la voiture pour aller faire des activités ailleurs. Cela fait un moment que je m'intéresse aux tiers-lieu ce concept vaste qui a l'origine désigne un lieu hors du travail ou de chez-soi qui offre un environnement social où l'on se mélange. Cela m'a donné envie de découvrir et partager un ensemble d'initiatives différentes qui nous permettent de se rencontrer, de dynamiser nos communautés, de vivre ensemble.</p>`
             },
             {
                 id: 4,
@@ -384,7 +419,7 @@
                 image: "assets/images/scout.jpg",
                 description: "Un témoignage d'une scout sur son parcours. ",
                 categories: ["association"],
-                content: `<p> Les scouts sont l'une des organisations les plus connues qui créer du lien entre les enfants, les jeunes ou moins jeunes et inculque des valeurs communes à ses membres. <br/> <br/> Nathalie est rentrée chez les scouts vers 8 ans puis une fois adulte elle y a participé comme cheftaine c'est à dire qu'elle encadrait des enfants scouts et aujourd'hui elle est trésorière. Chez les scouts elle a pu camper, faire des jeux, rencontrer des amis et même son mari. <br/> <br/> Bien qu'associé à la religion chrétienne le mouvement scouts est avant tout un mouvement d'éducation populaire ouvert à toutes et à tous. D'ailleurs il existe d'autres mouvements comme les éclaireurs qui sont l'équivalent laïc ou bien les scouts musulmans de France. <br/> Le coeur du projet est d'aider les individus à construire leur personnalité (le cadre scout repose sur le principe que chaque individu est unique et vise à l'autonomie et la responsabilité), à vivre ensemble (apprendre de façon concrète à être en groupe et décider de façon démocratique) et habiter autrement la planète (la nature est le lieu d'excellence de la pratique du scoutisme !). <br/> <br/> Pour plus d'informations n'hésitez pas à consulter leur <a href="https://sgdf.fr/nous-connaitre/notre-projet-educatif/"> site internet </a> ou contacter un groupe proche de chez vous ! <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/kFkSpOiyL58" title="Interview scout" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
+                content: `<p> Les scouts sont l'une des organisations les plus connues qui créer du lien entre les enfants, les jeunes ou moins jeunes et inculque des valeurs communes à ses membres. <br/> <br/> Nathalie est rentrée chez les scouts vers 8 ans puis une fois adulte elle y a participé comme cheftaine c'est à dire qu'elle encadrait des enfants scouts et aujourd'hui elle est trésorière. Chez les scouts elle a pu camper, faire des jeux, rencontrer des amis et même son mari. <br/> <br/> Bien qu'associé à la religion chrétienne le mouvement scouts est avant tout un mouvement d'éducation populaire ouvert à toutes et à tous. D'ailleurs il existe d'autres mouvements comme les éclaireurs qui sont l'équivalent laïc ou bien les scouts musulmans de France. <br/> Le coeur du projet est d'aider les individus à construire leur personnalité (le cadre scout repose sur le principe que chaque individu est unique et vise à l'autonomie et la responsabilité), à vivre ensemble (apprendre de façon concrète à être en groupe et décider de façon démocratique) et habiter autrement la planète (la nature est le lieu d'excellence de la pratique du scoutisme !). <br/> <br/> Pour plus d'informations n'hésitez pas à consulter leur <a href="https://sgdf.fr/nous-connaitre/notre-projet-educatif/"> site internet </a> ou contacter un groupe proche de chez vous ! <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/kFkSpOiyL58" title="Interview scout" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 5,
@@ -393,7 +428,7 @@
                 image: "assets/images/marche_decouverte.jpg",
                 description: "Après une chouette randonnée de 10km, petite interview du vice-président de l'association. ",
                 categories: ["association", "sport"],
-                content: `<p> Vous aimez la rando ? Découvrir de nouveaux endroits ou prendre le temps de rencontrer d'autres personnes ? L'association Marche et Découverte propose tout cela ! Avec des marches rapides pour les sportifs, des randonnée douces pour prendre le temps, des sorties à thèmes pour apprendre de nouvelles choses ou bien des marches nordiques vous avez de quoi trouver votre bonheur. <br/> <br/> Le jour de l'interview nous avions justement fait une petite randonnée de 10km à la découverte des cimetières de Caen. J'ai pu discuter avec plusieurs personnes très chouettes et intéressantes tout en apprenant plus sur les célébrités des cimetières par chez moi. Je suis convaincu que c'est un excellent moyen de créer du lien et forger de belles relations tout en s'entretenant et même si c'est souvent populaire chez les retraités, les jeunes sont accueillis à bras ouvert ! <br/> <br/> Le site du club <a href="https://www.med-ouistreham.fr/en-savoir-plus/le-club-8892" > juste ici </a>. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/S_zswliVnwk" title="Interview marche et découverte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
+                content: `<p> Vous aimez la rando ? Découvrir de nouveaux endroits ou prendre le temps de rencontrer d'autres personnes ? L'association Marche et Découverte propose tout cela ! Avec des marches rapides pour les sportifs, des randonnée douces pour prendre le temps, des sorties à thèmes pour apprendre de nouvelles choses ou bien des marches nordiques vous avez de quoi trouver votre bonheur. <br/> <br/> Le jour de l'interview nous avions justement fait une petite randonnée de 10km à la découverte des cimetières de Caen. J'ai pu discuter avec plusieurs personnes très chouettes et intéressantes tout en apprenant plus sur les célébrités des cimetières par chez moi. Je suis convaincu que c'est un excellent moyen de créer du lien et forger de belles relations tout en s'entretenant et même si c'est souvent populaire chez les retraités, les jeunes sont accueillis à bras ouvert ! <br/> <br/> Le site du club <a href="https://www.med-ouistreham.fr/en-savoir-plus/le-club-8892" > juste ici </a>. <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/S_zswliVnwk" title="Interview marche et découverte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 6,
@@ -402,7 +437,7 @@
                 image: "assets/images/regards.jpg",
                 description: "3 témoignages regroupés sur ce sujet et quelques chiffres sur le milieu associatif. ",
                 categories: ["association", "tiers-lieu"],
-                content: `<p> J'ai pu interroger 3 personnes très investies dans le milieu associatif : <br/> Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> (en construction...) <br/> Chiffres intéressants de France bénévole : la France est un pays avec un milieu associatif fort, 21% de la population fait parti d'une association ! Sur ces dernières années on constate une tendeance à la baisse chez les personnes agées et à la hausse chez les jeunes. L'une des interprétations est le fait qu'on devient parent plus tard ainsi les retraités sont plus occupés en devenant toujours juste grands-parents et les jeunes sont plus longtemps disponible avant d'avoir des enfants. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/3QWpD9yo11A" title="Regards croisés : rejoindre une asso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
+                content: `<p> J'ai pu interroger 3 personnes très investies dans le milieu associatif : <br/> Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> (en construction...) <br/> Chiffres intéressants de France bénévole : la France est un pays avec un milieu associatif fort, 21% de la population fait parti d'une association ! Sur ces dernières années on constate une tendeance à la baisse chez les personnes agées et à la hausse chez les jeunes. L'une des interprétations est le fait qu'on devient parent plus tard ainsi les retraités sont plus occupés en devenant toujours juste grands-parents et les jeunes sont plus longtemps disponible avant d'avoir des enfants. <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/3QWpD9yo11A" title="Regards croisés : rejoindre une asso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 7,
@@ -411,7 +446,7 @@
                 image: "assets/images/amavada.png",
                 description: "Interview de Doriane de l'association Amavada, un tiers-lieu où l'on peut prendre un café et voir du théâtre. ",
                 categories: ["association", "tiers-lieu"],
-                content: `<p>Merci à Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/RgFWvqktawY" title="Interview Amavada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ></p>`
+                content: `<p>Merci à Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/RgFWvqktawY" title="Interview Amavada" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> ></p>`
             },
             {
                 id: 8,
@@ -430,9 +465,9 @@
                 description: "Ici je regroupe un format d'extraits de mes interviews qui se concentre sur les belles histoires de rencontre ou de lien. ",
                 categories: ["association", "tiers-lieu"],
                 content: `<p style="text-align: center;"> Il y a beaucoup de belles histoires et j'ai voulu faire un format dédié à cela. Les associations sont déjà présentées dans d'autres vidéos ou articles ici on profites juste des anecdotes : <br/> <br/> 
-                    <iframe width="611" height="611" src="https://www.youtube.com/embed/eUfHsDn5EKU" title="Cafe Pierre-Heuze, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/cGFI_ipnDVs" title="Coop 5 pour 100, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/XPjgScaSSLg" title="LVN, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
+                    <iframe class="video-container" src="https://www.youtube.com/embed/eUfHsDn5EKU" title="Cafe Pierre-Heuze, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/cGFI_ipnDVs" title="Coop 5 pour 100, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/XPjgScaSSLg" title="LVN, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
             },
             {
                 id: 10,
@@ -455,7 +490,7 @@ L’association agit sur le terrain avec les personnes concernées, sensibilise 
 </a>
 </p>
  <br/> <br/> 
-                    <iframe width="611" height="611" src="https://www.youtube.com/embed/r8M0VoUVLzw" title="atd quart monde" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
+                    <iframe class="video-container" src="https://www.youtube.com/embed/r8M0VoUVLzw" title="atd quart monde" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 11,
@@ -480,9 +515,9 @@ Indépendante et pluraliste, l’association agit depuis plus de 75 ans pour lut
 </a>
 </p>
  <br/> Comment a-t-elle découverte l'association ? <br/> 
-                    <iframe width="611" height="611" src="https://www.youtube.com/embed/SiFrvIGpJxU" title="lvn partie1 decouverte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> Présentation de l'association : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/aN19FBdfGOE" title="lvn partie2 explication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> Anecdote de lien : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/XPjgScaSSLg" title="LVN, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
+                    <iframe class="video-container" src="https://www.youtube.com/embed/SiFrvIGpJxU" title="lvn partie1 decouverte" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> Présentation de l'association : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/aN19FBdfGOE" title="lvn partie2 explication" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> Anecdote de lien : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/XPjgScaSSLg" title="LVN, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
             },
             {
                 id: 12,
@@ -507,7 +542,7 @@ L’association anime également un café associatif à prix accessibles et prop
 </a>
 </p>
  <br/> <br/> 
-                    <iframe width="611" height="611" src="https://www.youtube.com/embed/eUfHsDn5EKU" title="Cafe Pierre-Heuze, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="video-container" src="https://www.youtube.com/embed/eUfHsDn5EKU" title="Cafe Pierre-Heuze, histoire de liens" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </p>`
             },
             {
@@ -533,8 +568,8 @@ Depuis 2020, l’association assure la gestion du musée et développe de nombre
 </a>
 </p>
  <br/> <br/> 
-                    <iframe width="611" height="611" src="https://www.youtube.com/embed/431jonTTHb4" title="radar presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> Anecdote : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/VoO5HBsniFQ" title="radar histoire lien" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="video-container" src="https://www.youtube.com/embed/431jonTTHb4" title="radar presentation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> Anecdote : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/VoO5HBsniFQ" title="radar histoire lien" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </p>`
             },
             {
@@ -545,10 +580,10 @@ Depuis 2020, l’association assure la gestion du musée et développe de nombre
                 description: "Quelques explications sur les différents formats de vidéos. ",
                 categories: ["blog"],
                 content: `<p style="text-align: center;"> Toutes les explications sont dans les images ci-dessous. En bref : il y a 4 formats sur le blog, des infos (présentation d'une asso), histoires de lien / qui font du bien (anecdote personnelle), vision du monde (discussion plus longue et plus globale) et micro-docu (vidéo sur un sujet précis). <br/> <br/> 
-                    <img src="assets/images/compte/3.png">
-                    <br/> <br/> <img src="assets/images/compte/4.png">
-                    <br/> <br/> <img src="assets/images/compte/5.png">
-                    <br/> <br/> <img src="assets/images/compte/6.png">  </p>`
+                    <img class="video-container" src="assets/images/compte/3.png">
+                    <br/> <br/> <img class="video-container" src="assets/images/compte/4.png">
+                    <br/> <br/> <img class="video-container" src="assets/images/compte/5.png">
+                    <br/> <br/> <img class="video-container" src="assets/images/compte/6.png">  </p>`
             },
             {
                 id: 15,
@@ -558,8 +593,8 @@ Depuis 2020, l’association assure la gestion du musée et développe de nombre
                 description: "Une association qui rassemble toutes sortes de publics par le jeu. ",
                 categories: ["association"],
                 content: `<p style="text-align: center;"> Une association d'éducation populaire qui favorise le lien social par le jeu. Elle propose des prestations pour différentes structures et organise des évènements comme des animations pour des familles, des ateliers pour publics défavorisés, des soirées jeux, formations ou festival de jeu. : <a href="https://www.jouons-ensemble.org" target="_blank" >Voir leur site.</a> <br/> J'ai eu la chance de passer plusieurs jours à leur côté et de voir comment ils proposent des jeux adaptés aux enfants, aux adultes débutants comme à des amateurs de jeux. <br/> <br/> 
-                    <iframe width="611" height="611" src="https://www.youtube.com/embed/-0uRsxg98cQ" title="Infos : Jouons ensemble" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/ZIyffU2ab_g" title="Histoire de lien, Jouons ensemble" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="video-container" src="https://www.youtube.com/embed/-0uRsxg98cQ" title="Infos : Jouons ensemble" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/ZIyffU2ab_g" title="Histoire de lien, Jouons ensemble" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                      </p>`
             },
             {
@@ -570,9 +605,9 @@ Depuis 2020, l’association assure la gestion du musée et développe de nombre
                 description: "Extraits d'interviews de plusieurs associations qui luttent contre la précarité comme la croix-rouge, la Boussole et le CCFD. Une fois de plus je regroupe un format qui se concentre sur les belles histoires de rencontres ou de lien. ",
                 categories: ["association", "lutte-précarité"],
                 content: `<p style="text-align: center;"> Il y a plus d'informations sur chaque association dans les articles du blog qui leur sont dédiés ici on se concentre sur les petites histoires, les anecdotes plus personnelles. <br/> <br/> 
-                    La boussole, lieu d'accueil de jour pour les personnes dans la rue : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/wpF9f3W2shU" title="Histoire de lien, la Boussole" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> <br/> La croix rouge, qui distribue de la nourriture lors de maraudes : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/iRkVd2b7hb8" title="Histoire lien, croix rouge" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> <br/> Le CCFD qui lutte contre la faim de façon systémique, en s'attaquant aux causes du problème : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/ew1ezbaFJsM" title="Histoire lien, CCFD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    La boussole, lieu d'accueil de jour pour les personnes dans la rue : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/wpF9f3W2shU" title="Histoire de lien, la Boussole" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> La croix rouge, qui distribue de la nourriture lors de maraudes : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/iRkVd2b7hb8" title="Histoire lien, croix rouge" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> Le CCFD qui lutte contre la faim de façon systémique, en s'attaquant aux causes du problème : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/ew1ezbaFJsM" title="Histoire lien, CCFD" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <br/> <b>Quelques informations </b> : en France, depuis le milieu des années 2000, la pauvreté repart à la hausse. Selon <a href="https://www.inegalites.fr/evolution_pauvrete_annuelle"> l'observatoire des inégalités </a>, si l'on fixe le seuil de pauvreté à 50 % du niveau de vie médian (1 073 euros par mois pour une personne seule), 5,4 millions de personnes sont pauvres, soit 8,4 % de la population. <br/> Selon <a href="https://www.insee.fr/fr/statistiques/5759045#onglet-1">l'Insee </a> 12,7 % de la population est en situation de privation matérielle et sociale en 2024.
 La privation matérielle et sociale, définie au niveau européen, approche la pauvreté de façon différente de la pauvreté monétaire. Elle s'intéresse à l'incapacité de couvrir des dépenses de la vie quotidienne.
 
@@ -586,8 +621,8 @@ En 2024, 12,7 % de la population métropolitaine vivant dans un logement ordinai
                 description: "Une association étudiante qui agit localement et à l'international. ",
                 categories: ["association"],
                 content: `<p style="text-align: center;">  Cette association a été créee par un groupe d'étudiants en pharmacie en 2011 et elle continue aujourd'hui d'agir à l'échelle locale et internationale. Leur principales activités sont notamment de la sensibilisation aux médicaments, des collectes solidaires ou de l'appuie au Togo (financier, matériel ou physique avec des volontaires qui partent là bas). Pour en savoir plus : <a href="https://www.pelicaensh.org" target="_blank" >consultez leur site.</a> C'est une association reconnue d'utilité publique donc n'hésitez pas à faire un don et un grand merci à la Jeanne, la secrétaire de Pelicaen, pour son interview. <br/>  <br/> <br/> 
-                    Présentation de l'association : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/dS8BYKVqXik" title="Pelicaen, info" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <br/> <br/> Histoire personnelle : <br/> <iframe width="611" height="611" src="https://www.youtube.com/embed/DoJ8RPYrsKA" title="Histoire de lien, Pelicaen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    Présentation de l'association : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/dS8BYKVqXik" title="Pelicaen, info" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br/> <br/> Histoire personnelle : <br/> <iframe class="video-container" src="https://www.youtube.com/embed/DoJ8RPYrsKA" title="Histoire de lien, Pelicaen" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                      </p>`
             },
             {
@@ -598,13 +633,13 @@ En 2024, 12,7 % de la population métropolitaine vivant dans un logement ordinai
                 description: "La boussole, un lieu d'accueil de jour pour les personnes dans la rue. ",
                 categories: ["association", "lutte-précarité"],
                 content: `<p> La Boussole est un lieu d'accueil de jour pour un public en grande précarité géré par le CCAS de le Ville de CAEN. On peut y trouver des espaces pour se poser et discuter, des douches, toilettes, machine à laver... De quoi aider, vraiment, les personnes dans le besoin. <a target="_blank" href="https://www.veille-sociale-14.org/associations/la-boussole/"> plus d'informations </a> 
-                    <br/> <br/>  <iframe width="611" height="611" src="https://www.youtube.com/embed/lIP4srQoBzI" title="La boussole, info" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
+                    <br/> <br/>  <iframe class="video-container" src="https://www.youtube.com/embed/lIP4srQoBzI" title="La boussole, info" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
             },
 
             // categories : communauté (calmette, abbaye...), eco-lieu, 
 
         ];
-
+        
         const articlesContainer = document.getElementById('articles-container');
         const categorySelect = document.getElementById('category-select');
         const modal = document.getElementById('modal');
@@ -709,6 +744,11 @@ En 2024, 12,7 % de la population métropolitaine vivant dans un logement ordinai
 
         initializeCategories();
         renderArticles();
+
+        // pour présenter le blog j'ouvre l'article 1ère publication
+        document.getElementById('blog-info-button').addEventListener('click', function(e) {  
+    openModal(3);
+});
     </script>
 </body>
 </html>
