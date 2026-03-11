@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
     <title>euhlaonseretrouve - Le Blog de Voyage</title>
     <style>
         * {
@@ -10,7 +11,12 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        .toggle-button {
+            cursor: pointer;
+        }
+        .toggle-button:hover {
+            text-decoration: underline;
+        }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #faf8f6;
@@ -310,6 +316,19 @@
                 grid-template-columns: repeat(3, 1fr);
             }
         }
+        .autres {
+            background-color: #d3aa2f1a;
+            color: #e6b204;
+            border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block; /* Make the button a block-level element */
+        }
+        .autres a {
+            color: #e68c04;
+        }
         .modern-button {
     background-color: rgb(232, 24, 17);
     color: #ffd54f;
@@ -379,6 +398,15 @@
         </div>
     </div>
 
+    
+<span class="autres">
+<h2 style="color: #d32f2f;"> Autres initiatives à la rencontre du lien :</h2>
+<h3> Faire tribu <a href="https://www.fairetribu.com/" target="_blank"> Site web et livre </a> </h3>
+<h3> Féderation française du lien <a href="https://www.nosliens.fr" target="_blank"> Site web </a> </h3>
+<h3> Féderation des trucs qui marchent <a href="https://www.trucsquimarchent.fr"> Site web et livre</a></h3>
+<h3> Projet d'un voyageur : <a href="https://regenerations-livre.fr/#presentation" target="_blank"> Régénérations : engagé-e-s pour un monde viable et enviable </a> </h3>
+<h3> Article de la fondation de France sur les lieux qui créent du lien <a href="https://www.fondationdefrance.org/fr/cat-personnes-vulnerables/etude-solitudes-ces-lieux-qui-creent-du-lien"> Site web </a></h3>
+</span>
     <footer>
         <p>&copy; 2026 Arnaud GODET - Tous droits réservés</p>
     </footer>
@@ -437,7 +465,7 @@
                 image: "assets/images/regards.jpg",
                 description: "3 témoignages regroupés sur ce sujet et quelques chiffres sur le milieu associatif. ",
                 categories: ["association", "tiers-lieu"],
-                content: `<p> J'ai pu interroger 3 personnes très investies dans le milieu associatif : <br/> Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> (en construction...) <br/> Chiffres intéressants de France bénévole : la France est un pays avec un milieu associatif fort, 21% de la population fait parti d'une association ! Sur ces dernières années on constate une tendeance à la baisse chez les personnes agées et à la hausse chez les jeunes. L'une des interprétations est le fait qu'on devient parent plus tard ainsi les retraités sont plus occupés en devenant toujours juste grands-parents et les jeunes sont plus longtemps disponible avant d'avoir des enfants. <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/3QWpD9yo11A" title="Regards croisés : rejoindre une asso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
+                content: `<p> J'ai pu interroger 3 personnes très investies dans le milieu associatif : <br/> Doriane DUBOIS association Amavada <a href="https://www.amavada.com/association" > voir le site web </a>. <br/> Jean Venard de l'association ATD Quart Monde (voir l'article à leur sujet) et Phillippe Renault de l'association les amis du musee (voir l'article à leur sujet). <br/> Chiffres intéressants de France bénévole : la France est un pays avec un milieu associatif fort, 21% de la population fait parti d'une association ! Sur ces dernières années on constate une tendeance à la baisse chez les personnes agées et à la hausse chez les jeunes. L'une des interprétations est le fait qu'on devient parent plus tard ainsi les retraités sont plus occupés en devenant toujours juste grands-parents et les jeunes sont plus longtemps disponible avant d'avoir des enfants. <br/> <br/> <iframe class="video-container" src="https://www.youtube.com/embed/3QWpD9yo11A" title="Regards croisés : rejoindre une asso" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </p>`
             },
             {
                 id: 7,
@@ -635,6 +663,117 @@ En 2024, 12,7 % de la population métropolitaine vivant dans un logement ordinai
                 content: `<p> La Boussole est un lieu d'accueil de jour pour un public en grande précarité géré par le CCAS de le Ville de CAEN. On peut y trouver des espaces pour se poser et discuter, des douches, toilettes, machine à laver... De quoi aider, vraiment, les personnes dans le besoin. <a target="_blank" href="https://www.veille-sociale-14.org/associations/la-boussole/"> plus d'informations </a> 
                     <br/> <br/>  <iframe class="video-container" src="https://www.youtube.com/embed/lIP4srQoBzI" title="La boussole, info" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </p>`
             },
+            {
+                id: 17,
+                title: "Micro-docu l'irénisme",
+                date: "03 Mars 2026",
+                image: "assets/images/paix.png",
+                description: "Un article qui dans un contexte de montée des extrêmes, parle de comment s'unir et se comprendre malgré nos différences.   ",
+                categories: ["association", "Blog"],
+                content: `<h2 class="toggle-button"> Sommes nous tous devenus fou !?  </h2> <div class="hidden-content" style="display: none;">   <p>
+            Vous avez peut-être déjà entendu cette phrase : <em>Nous avons des émotions paléolithiques, des institutions médiévales et des technologies dignes des dieux.</em>
+        </p>
+        <p>
+            <b>Aujourd’hui </b>la science nous permet d’étudier différentes espèces pour comprendre leur comportement, leurs besoins... Et on a même différents domaines pour s’étudier nous-même avec l’anthropologie, la sociologie ou la psychologie.
+        </p>
+        <p>
+            Pourtant nous vivons dans un monde, dans des sociétés qui ne sont pas adaptées à nos besoins.
+        </p>
+        <p>
+            <b>D’abord, </b>il saute aux yeux que nous avons une certaine capacité à façonner le monde. On peut construire des villes, creuser des montagnes, modifier le paysage comme bon nous semble. On peut aller sur la lune ou au fond des océans, exterminer une espèce ou la multiplier... L’humanité a un impact important sur ce qui l’entoure qui lui fait parfois oublier qu’elle ne peut pas tout faire non plus. Au bout d’un moment les ressources s’épuisent ou certains dégâts deviennent irréversibles, on le sait et pourtant on continue. En fait, on imagine même pas faire autrement. On écrit moult histoires sur la fin du monde qui nous parle à tous, mais on peine à imaginer collectivement comment vivre autrement. On s’imagine plutôt mourir qu’évoluer.
+        </p>
+        <p>
+            <b>Ensuite,</b> nous sommes parfaitement conscients que l’humain est un être social qui a besoin de s’entraider, d’être inséré dans une communauté, de s’accomplir personnellement... Et pourtant on vit de plus en plus dans des sociétés loin de tout cela. Où le culte de l’individu prime, où on est toujours plus connecté mais loin des uns des autres. En France 30% se sentent seuls et 15% sont en situation d’isolement physique. On peine à valoriser le bien-être ou comment bien vivre ensemble pour répondre à des logiques de chiffre. Vaut-il mieux aider nos voisins à se trouver une place dans notre communauté ou les mépriser d’être des chômeurs parce qu’un actionnaire à l’autre bout du monde a décidé de fermer l’usine de betteraves pour maximiser son profit.
+        </p>
+        <p>
+            <b>En fait,</b> on est conscient que ça ne va pas, on façonne le monde mais on construit des systèmes qui nous oppressent et on s’imagine plutôt mourir que changer. Je pense qu’on est tous complètement fous !
+        </p> </div>
+                    <br/> <br/>  <iframe width="608" height="608" src="https://www.youtube.com/embed/zCXwo94TJqw" title="Micro-docu l&#39;irénisme" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    
+                    <div class="content">
+    <br/><br/>
+    <h2>Compléments sur la vidéo :</h2>
+
+    <p>
+        Ici j’apporte des sources et des informations complémentaires à la vidéo.
+    </p>
+    <p>
+        Les médias sont vecteurs d’un climat anxiogène. Dans <a href="https://www.franceinfo.fr/sante/un-tiers-des-actifs-souffrent-de-problemes-de-sante-mentale-selon-une-etude-menee-dans-seize-pays-du-monde_7155015.html" target="_blank">cet article</a>, on mentionne notamment que l’exposition constante à des actualités négatives est l’une des principales sources de mal-être.
+    </p>
+    <p>
+        Il existe des médias alternatifs comme <a href="#" target="_blank">Neo</a>, <a href="#" target="_blank">Académie Citoyenne</a>…
+    </p>
+    <p>
+        Je suis particulièrement d’accord avec ce que dit l’<a href="#" target="_blank">Académie Citoyenne</a> dans son post « Crise de l’info » :
+        <blockquote>
+            « Tout le monde peut réinvestir l’espace du débat, quelles que soient ses opinions. Le problème, ce n’est pas de ne pas être d’accord. C’est de vivre dans des réalités parallèles qui ne se rencontrent plus. Réfléchir, c’est justement se confronter à ce qui bouscule nos certitudes. Ce qui nous tient à cœur : recréer du dialogue là où il n’y en a plus. »
+        </blockquote>
+    </p>
+
+    <p class="toggle-button">Dans le livre « Les ingénieurs du chaos », Giuliano da Empoli décrit très bien certains mécanismes de l’utilisation de la technologie au service d’idéologies toujours plus extrêmes.</p>
+    <div class="hidden-content" style="display: none;">
+        <p>
+            Je cite cet extrait très parlant :
+        </p>
+        <blockquote>
+            « Dans une telle situation, l’objectif est désormais d’identifier les thèmes qui comptent pour chacun, pour ensuite les exploiter à travers une campagne de communication individualisée. La science des physiciens permet à des campagnes contradictoires de coexister en paix, sans jamais se rencontrer jusqu’au moment du vote.
+        </blockquote>
+        <blockquote>
+            Il ne s’agit plus d’unir des électeurs autour du plus petit dénominateur commun, mais au contraire d’enflammer les passions du plus grand nombre de groupuscules possible pour ensuite les additionner, même à leur insu. Les inévitables contradictions contenues dans les messages adressés aux uns et aux autres resteront de toute façon invisibles aux yeux des médias et de l’ensemble du public. »
+        </blockquote>
+        <blockquote>
+            Nous sommes ainsi en train de redécouvrir la manière dont les minorités intolérantes peuvent déterminer le cours de l’histoire. « Comment en arrive-t-on à ce que certains livres soient interdits (ou brûlés…) ? se demande Nassim Nicholas Taleb. Certainement pas parce qu’ils offensent le commun des mortels — la majorité des personnes est passive et n’y accorde pas une grande importance, ou du moins pas assez pour en demander l’interdiction. Selon l’expérience, il suffit de quelques activistes motivés pour interdire certains livres, ou mettre sur liste noire certaines personnes. »
+        </blockquote>
+        <blockquote>
+            Ceci se produit parce qu’une minorité intolérante, même restreinte, est totalement inflexible et ne peut changer d’idée, tandis qu’une partie significative du reste de l’opinion est plus malléable. Compte tenu des bonnes conditions, et si le prix n’est pas trop élevé, cette dernière peut décider de s’aligner sur la minorité intolérante.
+        </blockquote>
+        <blockquote>
+            Le leader politique devient un homme creux, qui peut dire tout et son contraire. « Ne sois jamais ennuyeux » est la seule règle que Trump suit rigoureusement, produisant chaque jour un coup de théâtre, tel le cliffhanger d’une série télévisée qui contraint le public à rester collé à l’écran pour voir l’épisode suivant.
+        </blockquote>
+        <blockquote>
+            Pour celui qui vit dans des conditions de réel isolement, adhérer au Carnaval populiste signifie faire partie d’une communauté et, dans un certain sens, changer de vie, même si les objectifs politiques de l’initiative ne sont pas atteints.
+        </blockquote>
+    </div>
+
+    <p class="toggle-button">La surenchère d’informations et ce flou entre le vrai et le faux est utilisé comme stratégie politique.</p>
+    <div class="hidden-content" style="display: none;">
+        <p>
+            Perdus dans la surenchère d’informations et de fake news, indifférents prisonniers de notre quotidien, <a href="https://www.youtube.com/shorts/ZrfUxEMRhcg?feature=share" target="_blank">mention exemple marquant avec « Réponds jamais, réponds à rien »</a>.
+        </p>
+        <p>
+            Cette citation est d’autant plus vraie dans ce contexte : « Pour triompher, le mal n’a besoin que de l’inaction des hommes de bien », cela nous rappelle que la passivité est la porte ouverte à toute idéologie extrême.
+        </p>
+        <p>
+            Le livre <em>La Catastrophique Visite du Zoo</em> offre une très belle illustration de cela avec une minorité d’avis extrêmes qui l’emporte sur une majorité indifférente.
+        </p>
+    </div>
+
+    <p>
+        Désinformation climatique : <a href="https://cfdt-journalistes.fr/2026/01/23/la-desinformation-climatique-tres-accentuee-a-lextreme-droite/" target="_blank">https://cfdt-journalistes.fr/2026/01/23/la-desinformation-climatique-tres-accentuee-a-lextreme-droite/</a>
+    </p>
+    <p>
+        Les fausses informations se propagent plus vite : <a href="https://bu.ube.fr/EXPLOITATION/veille-sur-linfox.aspx" target="_blank">https://bu.ube.fr/EXPLOITATION/veille-sur-linfox.aspx</a>
+    </p>
+    <p>
+        On ne sait plus ce qui est vrai ou faux : « Si 30 % des fake news ont fait illusion chez les participants, ceux-ci ont aussi jugé fausses 40 % des informations fiables… » : <a href="https://lejournal.cnrs.fr/articles/internet-lautoroute-de-la-desinformation" target="_blank">https://lejournal.cnrs.fr/articles/internet-lautoroute-de-la-desinformation</a>
+    </p>
+
+    <p class="toggle-button">Autres médias alternatifs intéressants</p>
+    <div class="hidden-content" style="display: none;">
+        <p>
+            Votes Assemblée Nationale, Les Shifters – avec une critique pertinente de Bon Pote, L’Esprit Critique + critique de son contenu par Lealoutomasi et Rasbaille.
+        </p>
+    </div>
+
+    <p>
+        La montée du fascisme et de l’extrême droite sur Toute l’Europe : <a href="https://www.touteleurope.eu/vie-politique-des-etats-membres/comparatif-quels-sont-les-resultats-de-l-extreme-droite-dans-les-pays-de-l-union-europeenne/" target="_blank">https://www.touteleurope.eu/vie-politique-des-etats-membres/comparatif-quels-sont-les-resultats-de-l-extreme-droite-dans-les-pays-de-l-union-europeenne/</a>
+    </p>
+    <p>
+        Mediapart articles sur l’extrême droite : <a href="https://www.mediapart.fr/journal/international/dossier/l-europe-rongee-par-les-extremes-droites" target="_blank">https://www.mediapart.fr/journal/international/dossier/l-europe-rongee-par-les-extremes-droites</a>
+    </p>
+    <p>
+                     </p>`
+            },
 
             // categories : communauté (calmette, abbaye...), eco-lieu, 
 
@@ -713,6 +852,18 @@ En 2024, 12,7 % de la population métropolitaine vivant dans un logement ordinai
 
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
+                document.querySelectorAll('.toggle-button').forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            if (content && content.classList.contains('hidden-content')) {
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            }
+        });
+    });
             } catch (error) {
                 console.error('Error opening modal:', error);
             }
@@ -749,6 +900,8 @@ En 2024, 12,7 % de la population métropolitaine vivant dans un logement ordinai
         document.getElementById('blog-info-button').addEventListener('click', function(e) {  
     openModal(3);
 });
+        
     </script>
+
 </body>
 </html>
